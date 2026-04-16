@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-surface:       #111318;
+  --color-card:          #1a1d24;
+  --color-card-hover:    #1f2330;
+  --color-border:        #2a2d35;
+  --color-border-subtle: #222530;
+  --color-parchment:     #e8dfc8;
+  --color-secondary:     #8a8070;
+  --color-tertiary:      #5a5448;
+  --color-gold:          #b8952a;
+  --color-gold-muted:    #7a6318;
+  --color-correct:       #5a8a6a;
+  --color-incorrect:     #b84a4a;
+  --color-correct-bg:    #162018;
+  --color-incorrect-bg:  #201212;
+  --color-correct-border:#2a4a30;
+  --color-incorrect-border:#4a2020;
+
+  /* Fonts */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body:    "Lora", Georgia, serif;
+  --font-ui:      "DM Sans", system-ui, sans-serif;
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #111318;
+  color: #e8dfc8;
+  font-family: "DM Sans", system-ui, sans-serif;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+/* ── Scrollbar ────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #111318; }
+::-webkit-scrollbar-thumb { background: #2a2d35; border-radius: 2px; }
+
+/* ── Animations ───────────────────────────────── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes choiceBounce {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(0.975); }
+  100% { transform: scale(1); }
+}
+
+@keyframes timerPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.65; }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+.animate-fade-slide {
+  animation: fadeSlideIn 320ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+.animate-fade-slide-up {
+  animation: fadeSlideUp 400ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 260ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+.animate-choice-bounce {
+  animation: choiceBounce 200ms ease-out both;
+}
+
+.animate-timer-pulse {
+  animation: timerPulse 1.2s ease-in-out infinite;
+}
+
+.animate-progress-fill {
+  animation: progressFill 600ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)) both;
+}
+
+/* Stagger helpers */
+.delay-50  { animation-delay: 50ms; }
+.delay-100 { animation-delay: 100ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-250 { animation-delay: 250ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* ── Typography ───────────────────────────────── */
+.font-display { font-family: "Cormorant Garamond", Georgia, serif; }
+.font-body    { font-family: "Lora", Georgia, serif; }
+.font-ui      { font-family: "DM Sans", system-ui, sans-serif; }
+
+/* ── Details/Summary reset ────────────────────── */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
