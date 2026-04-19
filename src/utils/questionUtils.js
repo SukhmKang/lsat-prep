@@ -2,6 +2,7 @@ import rawQuestions from '../questions.json'
 
 // Canonical display labels for known lsat_type values
 const TYPE_CANONICAL = {
+  'reading_comprehension': 'Reading Comprehension',
   'must_be_true':          'Must Be True',
   'cannot_be_true':        'Cannot Be True',
   'inference':             'Must Be True',
@@ -53,9 +54,16 @@ function inferTypeFromQuestion(questionText) {
 
 const VALID_CHOICES = new Set(['A', 'B', 'C', 'D', 'E'])
 
+// Pre-pass: map each RC passage stimulus to the first question ID that shares it
+const stimulusFirstId = new Map()
+rawQuestions.forEach(q => {
+  if (q.lsat_type === 'reading_comprehension' && q.stimulus && !stimulusFirstId.has(q.stimulus)) {
+    stimulusFirstId.set(q.stimulus, q.id)
+  }
+})
+
 export const questions = rawQuestions
   .filter(q => q.answer && VALID_CHOICES.has(q.answer))
-  .filter(q => q.lsat_type !== 'reading_comprehension')
   .map(q => {
     const rawType = (q.lsat_type || '').trim().toLowerCase()
     const effectiveType = rawType
@@ -63,13 +71,27 @@ export const questions = rawQuestions
       : inferTypeFromQuestion(q.question)
 
     const stimulus = q.stimulus?.replace(/^Question Prompt Passage\s*\n\n?/, '').trim() ?? ''
+    const passageKey = q.lsat_type === 'reading_comprehension'
+      ? (stimulusFirstId.get(q.stimulus) ?? null)
+      : null
     return {
       ...q,
       stimulus,
       effectiveType,
       hasStimulus: Boolean(stimulus),
+      passageKey,
     }
   })
+
+export function groupByPassage(pool) {
+  const groups = new Map()
+  for (const q of pool) {
+    if (!q.passageKey) continue
+    if (!groups.has(q.passageKey)) groups.set(q.passageKey, [])
+    groups.get(q.passageKey).push(q)
+  }
+  return groups
+}
 
 export const wrongQuestions = questions.filter(q => q.correct === false)
 

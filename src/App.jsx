@@ -4,7 +4,7 @@ import QuestionScreen from './components/QuestionScreen'
 import TimedSession from './components/TimedSession'
 import ResultsScreen from './components/ResultsScreen'
 import { useProgress } from './hooks/useProgress'
-import { questions } from './utils/questionUtils'
+import { questions, groupByPassage } from './utils/questionUtils'
 
 const TIMED_HISTORY_KEY = 'lsat_timed_used_questions'
 
@@ -41,23 +41,49 @@ function saveTimedUsedQuestionIds(questionIds) {
 
 function buildTimedSessionQuestions(numQuestions, pool = questions) {
   const usedIds = new Set(loadTimedUsedQuestionIds())
-  const unseenQuestions = pool.filter(question => !usedIds.has(question.id))
 
-  if (unseenQuestions.length >= numQuestions) {
-    const sessionQuestions = shuffle(unseenQuestions).slice(0, numQuestions)
-    const nextUsedIds = [...usedIds, ...sessionQuestions.map(question => question.id)]
+  const lrPool = pool.filter(q => !q.passageKey)
+  const rcPassages = [...groupByPassage(pool.filter(q => q.passageKey)).values()]
 
-    saveTimedUsedQuestionIds(nextUsedIds)
+  const unseenLR = lrPool.filter(q => !usedIds.has(q.id))
+  const unseenRC = rcPassages.filter(p => !p.some(q => usedIds.has(q.id)))
+
+  // Each LR question and each RC passage is a "unit"; never split a passage
+  const unseenUnits = shuffle([...unseenLR.map(q => [q]), ...unseenRC])
+  const unseenCount = unseenUnits.reduce((s, u) => s + u.length, 0)
+
+  if (unseenCount >= numQuestions) {
+    // Greedily pick units; last RC passage may push slightly past numQuestions
+    const sessionUnits = []
+    let count = 0
+    for (const unit of unseenUnits) {
+      if (count >= numQuestions) break
+      sessionUnits.push(unit)
+      count += unit.length
+    }
+    const sessionQuestions = sessionUnits.flat()
+    saveTimedUsedQuestionIds([...usedIds, ...sessionQuestions.map(q => q.id)])
     return sessionQuestions
   }
 
-  const carriedOverQuestions = shuffle(unseenQuestions)
-  const carriedOverIds = new Set(carriedOverQuestions.map(question => question.id))
-  const refillPool = pool.filter(question => !carriedOverIds.has(question.id))
-  const freshCycleQuestions = shuffle(refillPool).slice(0, numQuestions - carriedOverQuestions.length)
+  // Pool exhausted — carry over all unseen, refill from used
+  const carriedIds = new Set(unseenUnits.flatMap(u => u.map(q => q.id)))
+  const usedLR = lrPool.filter(q => !carriedIds.has(q.id))
+  const usedRC = rcPassages.filter(p => !p.some(q => carriedIds.has(q.id)))
+  const refillUnits = shuffle([...usedLR.map(q => [q]), ...usedRC])
 
-  saveTimedUsedQuestionIds(freshCycleQuestions.map(question => question.id))
-  return [...carriedOverQuestions, ...freshCycleQuestions]
+  const needed = numQuestions - unseenCount
+  const freshUnits = []
+  let freshCount = 0
+  for (const unit of refillUnits) {
+    if (freshCount >= needed) break
+    freshUnits.push(unit)
+    freshCount += unit.length
+  }
+
+  const freshQuestions = freshUnits.flat()
+  saveTimedUsedQuestionIds(freshQuestions.map(q => q.id))
+  return [...unseenUnits.flat(), ...freshQuestions]
 }
 
 export default function App() {

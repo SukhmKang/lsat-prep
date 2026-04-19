@@ -12,6 +12,7 @@ export default function HomeScreen({
   const [numQuestions, setNumQuestions] = useState(20)
   const [showReset, setShowReset] = useState(false)
   const [selectedSources, setSelectedSources] = useState(() => new Set(allSources))
+  const [questionType, setQuestionType] = useState('both') // 'lr' | 'both' | 'rc'
 
   const allSelected = selectedSources.size === allSources.length
 
@@ -36,14 +37,18 @@ export default function HomeScreen({
     }
   }
 
-  // Filtered pools based on selected sources
+  const typeFilter = (q) =>
+    questionType === 'both' ||
+    (questionType === 'lr' && !q.passageKey) ||
+    (questionType === 'rc' && q.passageKey)
+
   const filteredPool = useMemo(
-    () => questions.filter(q => selectedSources.has(q.source)),
-    [selectedSources]
+    () => questions.filter(q => selectedSources.has(q.source) && typeFilter(q)),
+    [selectedSources, questionType]
   )
   const filteredWrongPool = useMemo(
-    () => wrongQuestions.filter(q => selectedSources.has(q.source)),
-    [selectedSources]
+    () => wrongQuestions.filter(q => selectedSources.has(q.source) && typeFilter(q)),
+    [selectedSources, questionType]
   )
 
   const cappedNum = Math.min(numQuestions, filteredPool.length)
@@ -144,6 +149,26 @@ export default function HomeScreen({
                 </button>
               )
             })}
+          </div>
+          <div className="mt-4">
+            <span className="font-ui text-xs font-semibold tracking-widest uppercase" style={{ color: '#a09888' }}>
+              Question Type
+            </span>
+            <div className="flex rounded-xl p-1 gap-1 mt-2" style={{ backgroundColor: '#eeebe6' }}>
+              {[['lr', 'LR'], ['both', 'Both'], ['rc', 'RC']].map(([val, label]) => (
+                <button
+                  key={val}
+                  onClick={() => setQuestionType(val)}
+                  className="flex-1 py-2 rounded-lg font-ui text-sm font-semibold transition-all duration-200"
+                  style={{
+                    backgroundColor: questionType === val ? '#1d4ed8' : 'transparent',
+                    color: questionType === val ? '#ffffff' : '#a09888',
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
