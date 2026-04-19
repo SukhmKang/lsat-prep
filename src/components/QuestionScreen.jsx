@@ -25,32 +25,32 @@ function ChoiceCard({ label, text, state, onClick, disabled }) {
   const isReveal = state === 'correct-reveal'
 
   const getBg = () => {
-    if (isCorrect || isReveal) return '#162018'
-    if (isIncorrect) return '#201212'
-    return '#1a1d24'
+    if (isCorrect || isReveal) return '#f0faf2'
+    if (isIncorrect) return '#fef2f2'
+    return '#ffffff'
   }
 
   const getBorder = () => {
-    if (isCorrect || isReveal) return '#2a4a30'
-    if (isIncorrect) return '#4a2020'
-    return '#2a2d35'
+    if (isCorrect || isReveal) return '#b8dcc0'
+    if (isIncorrect) return '#f0c0c0'
+    return '#d8d3cc'
   }
 
   const getLabelBg = () => {
-    if (isCorrect || isReveal) return '#5a8a6a'
-    if (isIncorrect) return '#b84a4a'
-    return '#2a2d35'
+    if (isCorrect || isReveal) return '#2a6635'
+    if (isIncorrect) return '#8a2828'
+    return '#e8e4de'
   }
 
   const getLabelColor = () => {
-    if (isCorrect || isReveal || isIncorrect) return '#111318'
-    return '#8a8070'
+    if (isCorrect || isReveal || isIncorrect) return '#ffffff'
+    return '#706860'
   }
 
   const getTextColor = () => {
-    if (isCorrect || isReveal) return '#a8d4b0'
-    if (isIncorrect) return '#d4a0a0'
-    return '#e8dfc8'
+    if (isCorrect || isReveal) return '#2a6635'
+    if (isIncorrect) return '#8a2828'
+    return '#1a1714'
   }
 
   const icon = isCorrect || isReveal
@@ -73,7 +73,7 @@ function ChoiceCard({ label, text, state, onClick, disabled }) {
         minHeight: 56,
       }}
       onMouseEnter={e => {
-        if (!disabled) e.currentTarget.style.borderColor = '#3a3d4a'
+        if (!disabled) e.currentTarget.style.borderColor = '#b8b3ac'
       }}
       onMouseLeave={e => {
         if (!disabled) e.currentTarget.style.borderColor = getBorder()
@@ -103,7 +103,7 @@ function ChoiceCard({ label, text, state, onClick, disabled }) {
       {icon && (
         <span
           className="flex-shrink-0 mt-0.5 transition-colors duration-150"
-          style={{ color: isCorrect || isReveal ? '#5a8a6a' : '#b84a4a' }}
+          style={{ color: isCorrect || isReveal ? '#2a6635' : '#8a2828' }}
         >
           {icon}
         </span>
@@ -145,34 +145,34 @@ export default function QuestionScreen({
   const progress = totalQuestions > 0 ? (questionNumber / totalQuestions) * 100 : 0
 
   return (
-    <div key={question.id} className="animate-fade-slide min-h-dvh flex flex-col" style={{ backgroundColor: '#111318' }}>
+    <div key={question.id} className="animate-fade-slide min-h-dvh flex flex-col" style={{ backgroundColor: '#f7f4f0' }}>
       {/* Top bar */}
       <div
         className="sticky top-0 z-10 px-4 py-3 flex items-center justify-between"
-        style={{ backgroundColor: '#111318', borderBottom: '1px solid #1e2028' }}
+        style={{ backgroundColor: '#f7f4f0', borderBottom: '1px solid #e0dbd4' }}
       >
         <div className="flex items-center gap-3">
           {/* Progress bar + counter */}
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="font-ui text-xs font-semibold" style={{ color: '#b8952a' }}>
+              <span className="font-ui text-xs font-semibold" style={{ color: '#1d4ed8' }}>
                 {questionNumber}
               </span>
-              <span className="font-ui text-xs" style={{ color: '#5a5448' }}>
+              <span className="font-ui text-xs" style={{ color: '#a09888' }}>
                 / {totalQuestions}
               </span>
             </div>
             {/* Thin progress bar */}
             <div
               className="rounded-full overflow-hidden"
-              style={{ width: 140, height: 2, backgroundColor: '#1e2028' }}
+              style={{ width: 140, height: 2, backgroundColor: '#e0dbd4' }}
             >
               <div
                 className="h-full rounded-full animate-progress-fill"
                 style={{
                   width: `${progress}%`,
-                  backgroundColor: '#b8952a',
-                  opacity: 0.6,
+                  backgroundColor: '#1d4ed8',
+                  opacity: 0.7,
                 }}
               />
             </div>
@@ -192,13 +192,13 @@ export default function QuestionScreen({
           <div
             className="mt-6 mb-4 p-4 rounded-xl"
             style={{
-              backgroundColor: '#141720',
-              border: '1px solid #1e2228',
+              backgroundColor: '#efece7',
+              border: '1px solid #e0dbd4',
             }}
           >
             <p
-              className="font-body text-sm leading-[1.8] italic"
-              style={{ color: '#c8c0ac' }}
+              className="font-body text-sm leading-[1.8]"
+              style={{ color: '#2e2822' }}
             >
               {question.stimulus}
             </p>
@@ -209,7 +209,7 @@ export default function QuestionScreen({
         <div className={question.hasStimulus ? 'mb-5' : 'mt-6 mb-5'}>
           <p
             className="font-ui text-base leading-relaxed font-medium"
-            style={{ color: '#e8dfc8' }}
+            style={{ color: '#1a1714' }}
           >
             {question.question}
           </p>
@@ -244,17 +244,17 @@ export default function QuestionScreen({
             <div
               className="flex items-center gap-2 px-4 py-2.5 rounded-t-xl"
               style={{
-                backgroundColor: isCorrect ? '#162018' : '#201212',
-                border: `1px solid ${isCorrect ? '#2a4a30' : '#4a2020'}`,
+                backgroundColor: isCorrect ? '#f0faf2' : '#fef2f2',
+                border: `1px solid ${isCorrect ? '#b8dcc0' : '#f0c0c0'}`,
                 borderBottom: 'none',
               }}
             >
-              <span style={{ color: isCorrect ? '#5a8a6a' : '#b84a4a', fontSize: 18 }}>
+              <span style={{ color: isCorrect ? '#2a6635' : '#8a2828', fontSize: 18 }}>
                 {isCorrect ? '✓' : '✗'}
               </span>
               <span
                 className="font-ui text-sm font-semibold"
-                style={{ color: isCorrect ? '#5a8a6a' : '#b84a4a' }}
+                style={{ color: isCorrect ? '#2a6635' : '#8a2828' }}
               >
                 {isCorrect ? 'Correct' : `Incorrect — Answer is ${question.answer}`}
               </span>
@@ -266,26 +266,26 @@ export default function QuestionScreen({
                 <summary
                   className="px-4 py-3 flex items-center justify-between font-ui text-xs font-semibold tracking-wider uppercase"
                   style={{
-                    backgroundColor: '#161920',
-                    border: '1px solid #1e2228',
-                    color: '#5a5448',
+                    backgroundColor: '#eeebe6',
+                    border: '1px solid #e0dbd4',
+                    color: '#a09888',
                     userSelect: 'none',
                   }}
                 >
                   Explanation
-                  <span className="text-base" style={{ color: '#2a2d35' }}>↕</span>
+                  <span className="text-base" style={{ color: '#d8d3cc' }}>↕</span>
                 </summary>
                 <div
                   className="px-4 py-4 rounded-b-xl"
                   style={{
-                    backgroundColor: '#141720',
-                    border: '1px solid #1e2228',
+                    backgroundColor: '#efece7',
+                    border: '1px solid #e0dbd4',
                     borderTop: 'none',
                   }}
                 >
                   <p
                     className="font-body text-sm leading-[1.8]"
-                    style={{ color: '#a09888' }}
+                    style={{ color: '#605850' }}
                   >
                     {question.explanation}
                   </p>
@@ -301,7 +301,7 @@ export default function QuestionScreen({
         <div
           className="fixed bottom-0 left-0 right-0 px-4 py-4 animate-fade-slide-up"
           style={{
-            background: 'linear-gradient(to top, #111318 60%, transparent)',
+            background: 'linear-gradient(to top, #f7f4f0 60%, transparent)',
             paddingBottom: 'max(16px, env(safe-area-inset-bottom))',
           }}
         >
@@ -309,12 +309,12 @@ export default function QuestionScreen({
             onClick={onNext}
             className="w-full py-4 rounded-2xl font-ui font-semibold text-base transition-all duration-150 active:scale-[0.98]"
             style={{
-              backgroundColor: '#b8952a',
-              color: '#111318',
+              backgroundColor: '#1d4ed8',
+              color: '#ffffff',
               letterSpacing: '0.01em',
             }}
-            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#d4ab32'}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#b8952a'}
+            onMouseEnter={e => e.currentTarget.style.backgroundColor = '#2563eb'}
+            onMouseLeave={e => e.currentTarget.style.backgroundColor = '#1d4ed8'}
           >
             Next Question →
           </button>

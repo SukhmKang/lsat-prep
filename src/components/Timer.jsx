@@ -22,7 +22,7 @@ export default function Timer({ formattedTime, isUrgent, totalSeconds, secondsLe
             cy="36"
             r={RADIUS}
             fill="none"
-            stroke="#2a2d35"
+            stroke="#e0dbd4"
             strokeWidth="3"
           />
           {/* Progress */}
@@ -31,7 +31,7 @@ export default function Timer({ formattedTime, isUrgent, totalSeconds, secondsLe
             cy="36"
             r={RADIUS}
             fill="none"
-            stroke={isUrgent ? '#b84a4a' : '#b8952a'}
+            stroke={isUrgent ? '#8a2828' : '#1d4ed8'}
             strokeWidth="3"
             strokeLinecap="round"
             strokeDasharray={CIRCUMFERENCE}
@@ -42,7 +42,7 @@ export default function Timer({ formattedTime, isUrgent, totalSeconds, secondsLe
         <div
           className="absolute inset-0 flex items-center justify-center font-ui font-semibold text-sm"
           style={{
-            color: isUrgent ? '#b84a4a' : '#b8952a',
+            color: isUrgent ? '#8a2828' : '#1d4ed8',
             letterSpacing: '0.02em',
           }}
         >

@@ -3,7 +3,7 @@ import QuestionScreen from './QuestionScreen'
 import Timer from './Timer'
 import { useTimer } from '../hooks/useTimer'
 
-export default function TimedSession({ session, onEnd, onExit }) {
+export default function TimedSession({ session, onEnd, onExit, untimed = false }) {
   const { questions, timeLimitSeconds } = session
 
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -14,17 +14,18 @@ export default function TimedSession({ session, onEnd, onExit }) {
   const answersRef = useRef({})
 
   const handleExpire = useCallback(() => {
+    if (untimed) return
     onEnd({
       answers: { ...answersRef.current },
       elapsedSeconds: timeLimitSeconds,
     })
-  }, [onEnd, timeLimitSeconds])
+  }, [onEnd, timeLimitSeconds, untimed])
 
-  const timer = useTimer(timeLimitSeconds, handleExpire)
+  const timer = useTimer(timeLimitSeconds ?? 999999, handleExpire)
 
   // Start timer on mount
   useEffect(() => {
-    timer.start()
+    if (!untimed) timer.start()
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleAnswer = (choice) => {
@@ -63,21 +64,21 @@ export default function TimedSession({ session, onEnd, onExit }) {
       mode="timed"
       onAnswer={handleAnswer}
       onNext={handleNext}
-      timerNode={
+      timerNode={untimed ? null : (
         <Timer
           formattedTime={timer.formattedTime}
           isUrgent={timer.isUrgent}
           totalSeconds={timeLimitSeconds}
           secondsLeft={timer.secondsLeft}
         />
-      }
+      )}
       exitNode={
         <button
           onClick={onExit}
           className="font-ui text-xs transition-colors self-center"
-          style={{ color: '#5a5448' }}
-          onMouseEnter={e => e.target.style.color = '#8a8070'}
-          onMouseLeave={e => e.target.style.color = '#5a5448'}
+          style={{ color: '#a09888' }}
+          onMouseEnter={e => e.target.style.color = '#706860'}
+          onMouseLeave={e => e.target.style.color = '#a09888'}
         >
           End
         </button>

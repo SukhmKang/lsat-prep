@@ -2,26 +2,26 @@
 
 @theme {
   /* Colors */
-  --color-surface:       #111318;
-  --color-card:          #1a1d24;
-  --color-card-hover:    #1f2330;
-  --color-border:        #2a2d35;
-  --color-border-subtle: #222530;
-  --color-parchment:     #e8dfc8;
-  --color-secondary:     #8a8070;
-  --color-tertiary:      #5a5448;
-  --color-gold:          #b8952a;
-  --color-gold-muted:    #7a6318;
-  --color-correct:       #5a8a6a;
-  --color-incorrect:     #b84a4a;
-  --color-correct-bg:    #162018;
-  --color-incorrect-bg:  #201212;
-  --color-correct-border:#2a4a30;
-  --color-incorrect-border:#4a2020;
+  --color-surface:       #f7f4f0;
+  --color-card:          #ffffff;
+  --color-card-hover:    #f5f2ee;
+  --color-border:        #d8d3cc;
+  --color-border-subtle: #e8e4de;
+  --color-parchment:     #1a1714;
+  --color-secondary:     #706860;
+  --color-tertiary:      #a09888;
+  --color-gold:          #1d4ed8;
+  --color-gold-muted:    #b8952a;
+  --color-correct:       #2a6635;
+  --color-incorrect:     #8a2828;
+  --color-correct-bg:    #f0faf2;
+  --color-incorrect-bg:  #fef2f2;
+  --color-correct-border:#b8dcc0;
+  --color-incorrect-border:#f0c0c0;
 
   /* Fonts */
-  --font-display: "Cormorant Garamond", Georgia, serif;
-  --font-body:    "Lora", Georgia, serif;
+  --font-display: "DM Sans", system-ui, sans-serif;
+  --font-body:    "DM Sans", system-ui, sans-serif;
   --font-ui:      "DM Sans", system-ui, sans-serif;
 
   /* Easing */
@@ -37,8 +37,8 @@ html {
 }
 
 body {
-  background-color: #111318;
-  color: #e8dfc8;
+  background-color: #f7f4f0;
+  color: #1a1714;
   font-family: "DM Sans", system-ui, sans-serif;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
@@ -52,8 +52,8 @@ body {
 
 /* ── Scrollbar ────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #111318; }
-::-webkit-scrollbar-thumb { background: #2a2d35; border-radius: 2px; }
+::-webkit-scrollbar-track { background: #f7f4f0; }
+::-webkit-scrollbar-thumb { background: #d8d3cc; border-radius: 2px; }
 
 /* ── Animations ───────────────────────────────── */
 @keyframes fadeSlideIn {
@@ -119,8 +119,8 @@ body {
 .delay-300 { animation-delay: 300ms; }
 
 /* ── Typography ───────────────────────────────── */
-.font-display { font-family: "Cormorant Garamond", Georgia, serif; }
-.font-body    { font-family: "Lora", Georgia, serif; }
+.font-display { font-family: "DM Sans", system-ui, sans-serif; }
+.font-body    { font-family: "DM Sans", system-ui, sans-serif; }
 .font-ui      { font-family: "DM Sans", system-ui, sans-serif; }
 
 /* ── Details/Summary reset ────────────────────── */

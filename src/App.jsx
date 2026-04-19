@@ -8,7 +8,8 @@ import { questions } from './utils/questionUtils'
 
 const TIMED_HISTORY_KEY = 'lsat_timed_used_questions'
 
-// Fisher-Yates shuffle (returns new array)
+// Fisher-Yates shuffle (returns new array) — defined before use below
+
 function shuffle(arr) {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
@@ -38,9 +39,9 @@ function saveTimedUsedQuestionIds(questionIds) {
   }
 }
 
-function buildTimedSessionQuestions(numQuestions) {
+function buildTimedSessionQuestions(numQuestions, pool = questions) {
   const usedIds = new Set(loadTimedUsedQuestionIds())
-  const unseenQuestions = questions.filter(question => !usedIds.has(question.id))
+  const unseenQuestions = pool.filter(question => !usedIds.has(question.id))
 
   if (unseenQuestions.length >= numQuestions) {
     const sessionQuestions = shuffle(unseenQuestions).slice(0, numQuestions)
@@ -52,7 +53,7 @@ function buildTimedSessionQuestions(numQuestions) {
 
   const carriedOverQuestions = shuffle(unseenQuestions)
   const carriedOverIds = new Set(carriedOverQuestions.map(question => question.id))
-  const refillPool = questions.filter(question => !carriedOverIds.has(question.id))
+  const refillPool = pool.filter(question => !carriedOverIds.has(question.id))
   const freshCycleQuestions = shuffle(refillPool).slice(0, numQuestions - carriedOverQuestions.length)
 
   saveTimedUsedQuestionIds(freshCycleQuestions.map(question => question.id))
@@ -60,9 +61,10 @@ function buildTimedSessionQuestions(numQuestions) {
 }
 
 export default function App() {
-  const [screen, setScreen] = useState('home')  // 'home' | 'endless' | 'timed' | 'results'
+  const [screen, setScreen] = useState('home')  // 'home' | 'endless' | 'timed' | 'mistakes' | 'results'
   const [timedSession, setTimedSession] = useState(null)
   const [timedConfig, setTimedConfig] = useState(null)
+  const [mistakesPool, setMistakesPool] = useState(null)
 
   const progress = useProgress()
 
@@ -101,10 +103,11 @@ export default function App() {
   }, [progress])
 
   // ── Timed mode ─────────────────────────────────────────────────
-  const startTimed = useCallback(({ numQuestions, timeLimitSeconds }) => {
-    const sessionQuestions = buildTimedSessionQuestions(numQuestions)
+  const startTimed = useCallback(({ numQuestions, timeLimitSeconds, pool }) => {
+    const sessionQuestions = buildTimedSessionQuestions(numQuestions, pool)
 
-    setTimedConfig({ numQuestions, timeLimitSeconds })
+    setMistakesPool(null)
+    setTimedConfig({ numQuestions, timeLimitSeconds, pool })
     setTimedSession({
       questions: sessionQuestions,
       timeLimitSeconds,
@@ -123,6 +126,23 @@ export default function App() {
     if (timedConfig) startTimed(timedConfig)
   }, [timedConfig, startTimed])
 
+  // ── Mistakes mode ───────────────────────────────────────────────
+  const startMistakes = useCallback((pool) => {
+    setMistakesPool(pool)
+    setTimedConfig(null)
+    setTimedSession({
+      questions: shuffle(pool),
+      timeLimitSeconds: null,
+      answers: {},
+      elapsedSeconds: 0,
+    })
+    setScreen('mistakes')
+  }, [])
+
+  const retryMistakes = useCallback(() => {
+    if (mistakesPool) startMistakes(mistakesPool)
+  }, [mistakesPool, startMistakes])
+
   const goHome = useCallback(() => {
     setScreen('home')
     pendingChoiceRef.current = null
@@ -136,6 +156,7 @@ export default function App() {
           <HomeScreen
             onStartEndless={startEndless}
             onStartTimed={startTimed}
+            onStartMistakes={startMistakes}
             endlessState={{
               currentIndex: progress.currentIndex,
               totalQuestions: progress.totalQuestions,
@@ -161,9 +182,9 @@ export default function App() {
               <button
                 onClick={goHome}
                 className="font-ui text-xs transition-colors self-center"
-                style={{ color: '#5a5448' }}
-                onMouseEnter={e => e.target.style.color = '#8a8070'}
-                onMouseLeave={e => e.target.style.color = '#5a5448'}
+                style={{ color: '#a09888' }}
+                onMouseEnter={e => e.target.style.color = '#706860'}
+                onMouseLeave={e => e.target.style.color = '#a09888'}
               >
                 ✕
               </button>
@@ -182,11 +203,22 @@ export default function App() {
         </div>
       )}
 
+      {screen === 'mistakes' && timedSession && (
+        <div key="mistakes-screen" className="animate-fade-slide" style={{ position: 'relative' }}>
+          <TimedSession
+            session={timedSession}
+            onEnd={endTimed}
+            onExit={goHome}
+            untimed
+          />
+        </div>
+      )}
+
       {screen === 'results' && timedSession && (
         <div key="results-screen" className="animate-fade-slide">
           <ResultsScreen
             session={timedSession}
-            onRetry={retryTimed}
+            onRetry={mistakesPool ? retryMistakes : retryTimed}
             onHome={goHome}
           />
         </div>

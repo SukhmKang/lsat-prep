@@ -55,15 +55,27 @@ const VALID_CHOICES = new Set(['A', 'B', 'C', 'D', 'E'])
 
 export const questions = rawQuestions
   .filter(q => q.answer && VALID_CHOICES.has(q.answer))
+  .filter(q => q.lsat_type !== 'reading_comprehension')
   .map(q => {
     const rawType = (q.lsat_type || '').trim().toLowerCase()
     const effectiveType = rawType
       ? (TYPE_CANONICAL[rawType] ?? q.lsat_type)
       : inferTypeFromQuestion(q.question)
 
+    const stimulus = q.stimulus?.replace(/^Question Prompt Passage\s*\n\n?/, '').trim() ?? ''
     return {
       ...q,
+      stimulus,
       effectiveType,
-      hasStimulus: Boolean(q.stimulus?.trim()),
+      hasStimulus: Boolean(stimulus),
     }
   })
+
+export const wrongQuestions = questions.filter(q => q.correct === false)
+
+export const allSources = [...new Set(questions.map(q => q.source).filter(Boolean))].sort()
+
+export function formatSourceLabel(source) {
+  const match = source.match(/(\d+)$/)
+  return match ? `PT ${match[1]}` : source
+}

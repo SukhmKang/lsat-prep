@@ -12,8 +12,8 @@ function QuestionReviewItem({ question, answer, index }) {
     <div
       className="rounded-xl overflow-hidden transition-all duration-200"
       style={{
-        backgroundColor: '#1a1d24',
-        border: `1px solid ${wasCorrect ? '#2a4a30' : isUnanswered ? '#2a2d35' : '#4a2020'}`,
+        backgroundColor: '#ffffff',
+        border: `1px solid ${wasCorrect ? '#b8dcc0' : isUnanswered ? '#d8d3cc' : '#f0c0c0'}`,
       }}
     >
       <button
@@ -26,9 +26,9 @@ function QuestionReviewItem({ question, answer, index }) {
           style={{
             width: 28,
             height: 28,
-            backgroundColor: wasCorrect ? '#162018' : isUnanswered ? '#1a1d24' : '#201212',
-            color: wasCorrect ? '#5a8a6a' : isUnanswered ? '#5a5448' : '#b84a4a',
-            border: `1px solid ${wasCorrect ? '#2a4a30' : isUnanswered ? '#2a2d35' : '#4a2020'}`,
+            backgroundColor: wasCorrect ? '#f0faf2' : isUnanswered ? '#f7f4f0' : '#fef2f2',
+            color: wasCorrect ? '#2a6635' : isUnanswered ? '#a09888' : '#8a2828',
+            border: `1px solid ${wasCorrect ? '#b8dcc0' : isUnanswered ? '#d8d3cc' : '#f0c0c0'}`,
           }}
         >
           {index + 1}
@@ -37,7 +37,7 @@ function QuestionReviewItem({ question, answer, index }) {
         {/* Question snippet */}
         <span
           className="font-ui text-sm flex-1 truncate"
-          style={{ color: '#8a8070' }}
+          style={{ color: '#706860' }}
         >
           {question.question.slice(0, 80)}{question.question.length > 80 ? '…' : ''}
         </span>
@@ -46,34 +46,34 @@ function QuestionReviewItem({ question, answer, index }) {
         <span
           className="font-ui text-xs flex-shrink-0 font-semibold"
           style={{
-            color: wasCorrect ? '#5a8a6a' : isUnanswered ? '#5a5448' : '#b84a4a',
+            color: wasCorrect ? '#2a6635' : isUnanswered ? '#a09888' : '#8a2828',
           }}
         >
           {isUnanswered ? '—' : wasCorrect ? '✓' : `✗ ${answer.selectedChoice}→${question.answer}`}
         </span>
 
-        <span style={{ color: '#2a2d35', fontSize: 12 }}>{open ? '▲' : '▼'}</span>
+        <span style={{ color: '#d8d3cc', fontSize: 12 }}>{open ? '▲' : '▼'}</span>
       </button>
 
       {open && (
         <div
           className="px-4 pb-4 animate-fade-slide"
-          style={{ borderTop: '1px solid #1e2228' }}
+          style={{ borderTop: '1px solid #e8e4de' }}
         >
           {/* Stimulus */}
           {question.hasStimulus && (
             <div
               className="mt-3 p-3 rounded-lg mb-3"
-              style={{ backgroundColor: '#141720', border: '1px solid #1e2228' }}
+              style={{ backgroundColor: '#efece7', border: '1px solid #e0dbd4' }}
             >
-              <p className="font-body text-xs leading-relaxed italic" style={{ color: '#8a8070' }}>
+              <p className="font-body text-xs leading-relaxed" style={{ color: '#706860' }}>
                 {question.stimulus}
               </p>
             </div>
           )}
 
           {/* Question */}
-          <p className="font-ui text-sm leading-relaxed mb-3 mt-3" style={{ color: '#c8c0ac' }}>
+          <p className="font-ui text-sm leading-relaxed mb-3 mt-3" style={{ color: '#1a1714' }}>
             {question.question}
           </p>
 
@@ -83,10 +83,10 @@ function QuestionReviewItem({ question, answer, index }) {
               const isCorrectAnswer = label === question.answer
               const isSelected = answer?.selectedChoice === label
               const style = isCorrectAnswer
-                ? { bg: '#162018', border: '#2a4a30', color: '#a8d4b0', labelBg: '#5a8a6a', labelColor: '#111318' }
+                ? { bg: '#f0faf2', border: '#b8dcc0', color: '#2a6635', labelBg: '#2a6635', labelColor: '#ffffff' }
                 : isSelected && !isCorrectAnswer
-                  ? { bg: '#201212', border: '#4a2020', color: '#d4a0a0', labelBg: '#b84a4a', labelColor: '#111318' }
-                  : { bg: '#141720', border: '#1e2228', color: '#5a5448', labelBg: '#1e2228', labelColor: '#5a5448' }
+                  ? { bg: '#fef2f2', border: '#f0c0c0', color: '#8a2828', labelBg: '#8a2828', labelColor: '#ffffff' }
+                  : { bg: '#f7f4f0', border: '#e8e4de', color: '#a09888', labelBg: '#e8e4de', labelColor: '#a09888' }
 
               return (
                 <div
@@ -112,12 +112,12 @@ function QuestionReviewItem({ question, answer, index }) {
           {question.explanation && (
             <div
               className="px-3 py-3 rounded-lg"
-              style={{ backgroundColor: '#141720', border: '1px solid #1e2228' }}
+              style={{ backgroundColor: '#efece7', border: '1px solid #e0dbd4' }}
             >
-              <p className="font-ui text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: '#5a5448' }}>
+              <p className="font-ui text-xs font-semibold tracking-widest uppercase mb-2" style={{ color: '#a09888' }}>
                 Explanation
               </p>
-              <p className="font-body text-xs leading-relaxed" style={{ color: '#8a8070' }}>
+              <p className="font-body text-xs leading-relaxed" style={{ color: '#605850' }}>
                 {question.explanation}
               </p>
             </div>
@@ -136,28 +136,28 @@ export default function ResultsScreen({ session, onRetry, onHome }) {
     ? Math.round((score.correct / score.answered) * 100)
     : 0
 
-  const scoreColor = pct >= 70 ? '#5a8a6a' : pct >= 50 ? '#b8952a' : '#b84a4a'
+  const scoreColor = pct >= 70 ? '#2a6635' : pct >= 50 ? '#1d4ed8' : '#8a2828'
 
   return (
-    <div className="animate-fade-slide min-h-dvh" style={{ backgroundColor: '#111318' }}>
+    <div className="animate-fade-slide min-h-dvh" style={{ backgroundColor: '#f7f4f0' }}>
       {/* Top bar */}
       <div
         className="sticky top-0 z-10 px-4 py-3 flex items-center justify-between"
-        style={{ backgroundColor: '#111318', borderBottom: '1px solid #1e2028' }}
+        style={{ backgroundColor: '#f7f4f0', borderBottom: '1px solid #e0dbd4' }}
       >
         <button
           onClick={onHome}
           className="font-ui text-sm transition-colors"
-          style={{ color: '#5a5448' }}
-          onMouseEnter={e => e.target.style.color = '#e8dfc8'}
-          onMouseLeave={e => e.target.style.color = '#5a5448'}
+          style={{ color: '#a09888' }}
+          onMouseEnter={e => e.target.style.color = '#1a1714'}
+          onMouseLeave={e => e.target.style.color = '#a09888'}
         >
           ← Home
         </button>
         <button
           onClick={onRetry}
           className="font-ui text-xs font-semibold px-4 py-2 rounded-full transition-all"
-          style={{ backgroundColor: '#1a1d24', color: '#b8952a', border: '1px solid #2a2d35' }}
+          style={{ backgroundColor: '#ffffff', color: '#1d4ed8', border: '1px solid #d8d3cc' }}
         >
           Retry
         </button>
@@ -166,7 +166,7 @@ export default function ResultsScreen({ session, onRetry, onHome }) {
       <div className="px-4 pb-24">
         {/* Score hero */}
         <div className="text-center pt-10 pb-8 animate-fade-slide-up">
-          <p className="font-ui text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#5a5448' }}>
+          <p className="font-ui text-xs font-semibold tracking-widest uppercase mb-3" style={{ color: '#a09888' }}>
             Session Complete
           </p>
           <div
@@ -174,14 +174,14 @@ export default function ResultsScreen({ session, onRetry, onHome }) {
             style={{ fontSize: 80, fontWeight: 700, lineHeight: 1, color: scoreColor, letterSpacing: '-0.02em' }}
           >
             {score.correct}
-            <span className="font-display" style={{ fontSize: 40, color: '#2a2d35', fontWeight: 400 }}>
+            <span className="font-display" style={{ fontSize: 40, color: '#d8d3cc', fontWeight: 400 }}>
               /{score.total}
             </span>
           </div>
           <div className="font-ui text-lg font-semibold mb-1" style={{ color: scoreColor }}>
             {pct}%
           </div>
-          <div className="font-ui text-sm" style={{ color: '#5a5448' }}>
+          <div className="font-ui text-sm" style={{ color: '#a09888' }}>
             {unansweredCount > 0 && `${unansweredCount} unanswered · `}
             {formatTime(elapsedSeconds)} / {formatTime(timeLimitSeconds)}
           </div>
@@ -191,32 +191,32 @@ export default function ResultsScreen({ session, onRetry, onHome }) {
         {typeBreakdown.length > 0 && (
           <div
             className="mb-5 rounded-xl overflow-hidden animate-fade-slide delay-100"
-            style={{ border: '1px solid #2a2d35' }}
+            style={{ border: '1px solid #d8d3cc' }}
           >
             <div
               className="px-4 py-3"
-              style={{ backgroundColor: '#141720', borderBottom: '1px solid #1e2228' }}
+              style={{ backgroundColor: '#efece7', borderBottom: '1px solid #e0dbd4' }}
             >
-              <p className="font-ui text-xs font-semibold tracking-widest uppercase" style={{ color: '#5a5448' }}>
+              <p className="font-ui text-xs font-semibold tracking-widest uppercase" style={{ color: '#a09888' }}>
                 By Question Type
               </p>
             </div>
-            <div style={{ backgroundColor: '#1a1d24' }}>
+            <div style={{ backgroundColor: '#ffffff' }}>
               {typeBreakdown.map(({ type, correct, total, pct: typePct }, i) => (
                 <div
                   key={type}
                   className="px-4 py-3"
-                  style={{ borderBottom: i < typeBreakdown.length - 1 ? '1px solid #1e2228' : 'none' }}
+                  style={{ borderBottom: i < typeBreakdown.length - 1 ? '1px solid #e8e4de' : 'none' }}
                 >
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="font-ui text-sm" style={{ color: '#c8c0ac' }}>{type}</span>
+                    <span className="font-ui text-sm" style={{ color: '#1a1714' }}>{type}</span>
                     <div className="flex items-center gap-2">
-                      <span className="font-ui text-xs" style={{ color: '#5a5448' }}>
+                      <span className="font-ui text-xs" style={{ color: '#a09888' }}>
                         {correct}/{total}
                       </span>
                       <span
                         className="font-ui text-sm font-semibold"
-                        style={{ color: typePct >= 70 ? '#5a8a6a' : typePct >= 50 ? '#b8952a' : '#b84a4a', minWidth: 36, textAlign: 'right' }}
+                        style={{ color: typePct >= 70 ? '#2a6635' : typePct >= 50 ? '#1d4ed8' : '#8a2828', minWidth: 36, textAlign: 'right' }}
                       >
                         {typePct}%
                       </span>
@@ -224,13 +224,13 @@ export default function ResultsScreen({ session, onRetry, onHome }) {
                   </div>
                   <div
                     className="rounded-full overflow-hidden"
-                    style={{ height: 3, backgroundColor: '#1e2028' }}
+                    style={{ height: 3, backgroundColor: '#e8e4de' }}
                   >
                     <div
                       className="h-full rounded-full animate-progress-fill"
                       style={{
                         width: `${typePct}%`,
-                        backgroundColor: typePct >= 70 ? '#5a8a6a' : typePct >= 50 ? '#b8952a' : '#b84a4a',
+                        backgroundColor: typePct >= 70 ? '#2a6635' : typePct >= 50 ? '#1d4ed8' : '#8a2828',
                         animationDelay: `${i * 60}ms`,
                       }}
                     />
@@ -245,7 +245,7 @@ export default function ResultsScreen({ session, onRetry, onHome }) {
         <div className="animate-fade-slide delay-200">
           <p
             className="font-ui text-xs font-semibold tracking-widest uppercase mb-3"
-            style={{ color: '#5a5448' }}
+            style={{ color: '#a09888' }}
           >
             Question Review
           </p>
@@ -266,21 +266,21 @@ export default function ResultsScreen({ session, onRetry, onHome }) {
       <div
         className="fixed bottom-0 left-0 right-0 px-4 py-4 flex gap-3"
         style={{
-          background: 'linear-gradient(to top, #111318 60%, transparent)',
+          background: 'linear-gradient(to top, #f7f4f0 60%, transparent)',
           paddingBottom: 'max(16px, env(safe-area-inset-bottom))',
         }}
       >
         <button
           onClick={onHome}
           className="flex-1 py-3.5 rounded-2xl font-ui font-semibold text-sm transition-all active:scale-[0.98]"
-          style={{ backgroundColor: '#1a1d24', color: '#8a8070', border: '1px solid #2a2d35' }}
+          style={{ backgroundColor: '#ffffff', color: '#706860', border: '1px solid #d8d3cc' }}
         >
           Home
         </button>
         <button
           onClick={onRetry}
           className="flex-1 py-3.5 rounded-2xl font-ui font-semibold text-sm transition-all active:scale-[0.98]"
-          style={{ backgroundColor: '#b8952a', color: '#111318' }}
+          style={{ backgroundColor: '#1d4ed8', color: '#ffffff' }}
         >
           New Session →
         </button>
