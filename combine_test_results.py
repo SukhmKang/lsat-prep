@@ -2,8 +2,9 @@ import json
 import os
 import glob
 
-TEST_RESULTS_DIR = os.path.join(os.path.dirname(__file__), "test_results")
+TEST_RESULTS_DIR = os.path.join(os.path.dirname(__file__), "scraped_tests")
 OUTPUT_FILE = os.path.join(os.path.dirname(__file__), "combined_test_results.json")
+VALID_CHOICES = set("ABCDE")
 
 
 def get_selected_letter(choices):
@@ -47,6 +48,7 @@ def convert_question(q, source, rc_sections):
         "answer": correct_letter,
         "selected_answer": selected_letter,
         "correct": is_correct,
+        "flagged": bool(q.get("flagged", False)),
         "explanation": "",
         "lsat_type": lsat_type,
         "category": lsat_type,
@@ -54,8 +56,15 @@ def convert_question(q, source, rc_sections):
     }
 
 
+def is_convertible_question(q):
+    correct_letter = q.get("correctLetter", "")
+    choice_letters = {c.get("letter") for c in q.get("choices", [])}
+    return correct_letter in VALID_CHOICES and VALID_CHOICES.issubset(choice_letters)
+
+
 def main():
     combined = []
+    skipped = 0
 
     result_files = sorted(glob.glob(os.path.join(TEST_RESULTS_DIR, "*.json")))
 
@@ -66,12 +75,17 @@ def main():
 
         rc_sections = classify_sections(questions)
         for q in questions:
+            if not is_convertible_question(q):
+                skipped += 1
+                continue
             combined.append(convert_question(q, source, rc_sections))
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(combined, f, indent=2, ensure_ascii=False)
 
     print(f"Combined {len(combined)} questions from {len(result_files)} files into {OUTPUT_FILE}")
+    if skipped:
+        print(f"Skipped {skipped} question(s) with missing answers or choices")
 
 
 if __name__ == "__main__":

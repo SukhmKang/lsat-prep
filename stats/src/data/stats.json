@@ -1,0 +1,2107 @@
+{
+  "generatedFrom": "combined_test_results.json",
+  "overall": {
+    "total": 2780,
+    "correct": 2358,
+    "accuracy": 84.8,
+    "flagged": 400,
+    "incorrect": 422,
+    "sources": 28
+  },
+  "byType": [
+    {
+      "total": 1853,
+      "correct": 1545,
+      "accuracy": 83.4,
+      "label": "logical_reasoning",
+      "flagged": 295
+    },
+    {
+      "total": 927,
+      "correct": 813,
+      "accuracy": 87.7,
+      "label": "reading_comprehension",
+      "flagged": 105
+    }
+  ],
+  "bySource": [
+    {
+      "total": 99,
+      "correct": 94,
+      "accuracy": 94.9,
+      "label": "PT 101",
+      "flagged": 10
+    },
+    {
+      "total": 98,
+      "correct": 71,
+      "accuracy": 72.4,
+      "label": "PT 102",
+      "flagged": 1
+    },
+    {
+      "total": 100,
+      "correct": 81,
+      "accuracy": 81.0,
+      "label": "PT 103",
+      "flagged": 14
+    },
+    {
+      "total": 97,
+      "correct": 80,
+      "accuracy": 82.5,
+      "label": "PT 104",
+      "flagged": 15
+    },
+    {
+      "total": 99,
+      "correct": 88,
+      "accuracy": 88.9,
+      "label": "PT 105",
+      "flagged": 14
+    },
+    {
+      "total": 101,
+      "correct": 81,
+      "accuracy": 80.2,
+      "label": "PT 106",
+      "flagged": 20
+    },
+    {
+      "total": 99,
+      "correct": 82,
+      "accuracy": 82.8,
+      "label": "PT 107",
+      "flagged": 13
+    },
+    {
+      "total": 97,
+      "correct": 86,
+      "accuracy": 88.7,
+      "label": "PT 108",
+      "flagged": 9
+    },
+    {
+      "total": 101,
+      "correct": 88,
+      "accuracy": 87.1,
+      "label": "PT 120",
+      "flagged": 15
+    },
+    {
+      "total": 100,
+      "correct": 87,
+      "accuracy": 87.0,
+      "label": "PT 121",
+      "flagged": 15
+    },
+    {
+      "total": 100,
+      "correct": 82,
+      "accuracy": 82.0,
+      "label": "PT 122",
+      "flagged": 15
+    },
+    {
+      "total": 97,
+      "correct": 80,
+      "accuracy": 82.5,
+      "label": "PT 123",
+      "flagged": 12
+    },
+    {
+      "total": 100,
+      "correct": 87,
+      "accuracy": 87.0,
+      "label": "PT 124",
+      "flagged": 10
+    },
+    {
+      "total": 98,
+      "correct": 85,
+      "accuracy": 86.7,
+      "label": "PT 125",
+      "flagged": 12
+    },
+    {
+      "total": 100,
+      "correct": 86,
+      "accuracy": 86.0,
+      "label": "PT 126",
+      "flagged": 19
+    },
+    {
+      "total": 100,
+      "correct": 81,
+      "accuracy": 81.0,
+      "label": "PT 127",
+      "flagged": 19
+    },
+    {
+      "total": 99,
+      "correct": 89,
+      "accuracy": 89.9,
+      "label": "PT 128",
+      "flagged": 23
+    },
+    {
+      "total": 100,
+      "correct": 89,
+      "accuracy": 89.0,
+      "label": "PT 129",
+      "flagged": 13
+    },
+    {
+      "total": 100,
+      "correct": 92,
+      "accuracy": 92.0,
+      "label": "PT 130",
+      "flagged": 18
+    },
+    {
+      "total": 100,
+      "correct": 92,
+      "accuracy": 92.0,
+      "label": "PT 131",
+      "flagged": 16
+    },
+    {
+      "total": 101,
+      "correct": 91,
+      "accuracy": 90.1,
+      "label": "PT 132",
+      "flagged": 17
+    },
+    {
+      "total": 98,
+      "correct": 77,
+      "accuracy": 78.6,
+      "label": "PT 136",
+      "flagged": 14
+    },
+    {
+      "total": 101,
+      "correct": 85,
+      "accuracy": 84.2,
+      "label": "PT 140",
+      "flagged": 14
+    },
+    {
+      "total": 99,
+      "correct": 80,
+      "accuracy": 80.8,
+      "label": "PT 141",
+      "flagged": 13
+    },
+    {
+      "total": 100,
+      "correct": 84,
+      "accuracy": 84.0,
+      "label": "PT 143",
+      "flagged": 14
+    },
+    {
+      "total": 98,
+      "correct": 82,
+      "accuracy": 83.7,
+      "label": "PT 150",
+      "flagged": 15
+    },
+    {
+      "total": 100,
+      "correct": 84,
+      "accuracy": 84.0,
+      "label": "PT 151",
+      "flagged": 15
+    },
+    {
+      "total": 98,
+      "correct": 74,
+      "accuracy": 75.5,
+      "label": "PT 152",
+      "flagged": 15
+    }
+  ],
+  "bySection": [
+    {
+      "total": 695,
+      "correct": 582,
+      "accuracy": 83.7,
+      "label": "Section 1",
+      "flagged": 106
+    },
+    {
+      "total": 699,
+      "correct": 593,
+      "accuracy": 84.8,
+      "label": "Section 2",
+      "flagged": 100
+    },
+    {
+      "total": 691,
+      "correct": 582,
+      "accuracy": 84.2,
+      "label": "Section 3",
+      "flagged": 94
+    },
+    {
+      "total": 695,
+      "correct": 601,
+      "accuracy": 86.5,
+      "label": "Section 4",
+      "flagged": 100
+    }
+  ],
+  "byQuestion": [
+    {
+      "total": 112,
+      "correct": 108,
+      "accuracy": 96.4,
+      "label": "q01",
+      "flagged": 4
+    },
+    {
+      "total": 112,
+      "correct": 109,
+      "accuracy": 97.3,
+      "label": "q02",
+      "flagged": 2
+    },
+    {
+      "total": 112,
+      "correct": 107,
+      "accuracy": 95.5,
+      "label": "q03",
+      "flagged": 11
+    },
+    {
+      "total": 112,
+      "correct": 105,
+      "accuracy": 93.8,
+      "label": "q04",
+      "flagged": 7
+    },
+    {
+      "total": 112,
+      "correct": 102,
+      "accuracy": 91.1,
+      "label": "q05",
+      "flagged": 11
+    },
+    {
+      "total": 112,
+      "correct": 102,
+      "accuracy": 91.1,
+      "label": "q06",
+      "flagged": 16
+    },
+    {
+      "total": 112,
+      "correct": 96,
+      "accuracy": 85.7,
+      "label": "q07",
+      "flagged": 14
+    },
+    {
+      "total": 112,
+      "correct": 104,
+      "accuracy": 92.9,
+      "label": "q08",
+      "flagged": 14
+    },
+    {
+      "total": 112,
+      "correct": 98,
+      "accuracy": 87.5,
+      "label": "q09",
+      "flagged": 7
+    },
+    {
+      "total": 112,
+      "correct": 96,
+      "accuracy": 85.7,
+      "label": "q10",
+      "flagged": 16
+    },
+    {
+      "total": 112,
+      "correct": 98,
+      "accuracy": 87.5,
+      "label": "q11",
+      "flagged": 16
+    },
+    {
+      "total": 112,
+      "correct": 97,
+      "accuracy": 86.6,
+      "label": "q12",
+      "flagged": 18
+    },
+    {
+      "total": 111,
+      "correct": 98,
+      "accuracy": 88.3,
+      "label": "q13",
+      "flagged": 24
+    },
+    {
+      "total": 112,
+      "correct": 95,
+      "accuracy": 84.8,
+      "label": "q14",
+      "flagged": 21
+    },
+    {
+      "total": 112,
+      "correct": 97,
+      "accuracy": 86.6,
+      "label": "q15",
+      "flagged": 20
+    },
+    {
+      "total": 112,
+      "correct": 91,
+      "accuracy": 81.2,
+      "label": "q16",
+      "flagged": 12
+    },
+    {
+      "total": 112,
+      "correct": 90,
+      "accuracy": 80.4,
+      "label": "q17",
+      "flagged": 25
+    },
+    {
+      "total": 112,
+      "correct": 84,
+      "accuracy": 75.0,
+      "label": "q18",
+      "flagged": 22
+    },
+    {
+      "total": 112,
+      "correct": 94,
+      "accuracy": 83.9,
+      "label": "q19",
+      "flagged": 20
+    },
+    {
+      "total": 112,
+      "correct": 89,
+      "accuracy": 79.5,
+      "label": "q20",
+      "flagged": 24
+    },
+    {
+      "total": 112,
+      "correct": 84,
+      "accuracy": 75.0,
+      "label": "q21",
+      "flagged": 24
+    },
+    {
+      "total": 112,
+      "correct": 82,
+      "accuracy": 73.2,
+      "label": "q22",
+      "flagged": 24
+    },
+    {
+      "total": 112,
+      "correct": 86,
+      "accuracy": 76.8,
+      "label": "q23",
+      "flagged": 24
+    },
+    {
+      "total": 102,
+      "correct": 73,
+      "accuracy": 71.6,
+      "label": "q24",
+      "flagged": 16
+    },
+    {
+      "total": 73,
+      "correct": 51,
+      "accuracy": 69.9,
+      "label": "q25",
+      "flagged": 7
+    },
+    {
+      "total": 30,
+      "correct": 22,
+      "accuracy": 73.3,
+      "label": "q26",
+      "flagged": 1
+    }
+  ],
+  "byGlobalQuestion": [
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#1",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#2",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#3",
+      "flagged": 0
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#4",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#5",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#6",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#7",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#8",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#9",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 28,
+      "accuracy": 100.0,
+      "label": "#10",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#11",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#12",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#13",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#14",
+      "flagged": 8
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#15",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#16",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 21,
+      "accuracy": 75.0,
+      "label": "#17",
+      "flagged": 7
+    },
+    {
+      "total": 28,
+      "correct": 22,
+      "accuracy": 78.6,
+      "label": "#18",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#19",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 22,
+      "accuracy": 78.6,
+      "label": "#20",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 22,
+      "accuracy": 78.6,
+      "label": "#21",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 17,
+      "accuracy": 60.7,
+      "label": "#22",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 20,
+      "accuracy": 71.4,
+      "label": "#23",
+      "flagged": 8
+    },
+    {
+      "total": 28,
+      "correct": 20,
+      "accuracy": 71.4,
+      "label": "#24",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 20,
+      "accuracy": 71.4,
+      "label": "#25",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#26",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#27",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#28",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 28,
+      "accuracy": 100.0,
+      "label": "#29",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#30",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#31",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#32",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#33",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#34",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 20,
+      "accuracy": 71.4,
+      "label": "#35",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#36",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#37",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#38",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#39",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#40",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 22,
+      "accuracy": 78.6,
+      "label": "#41",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 21,
+      "accuracy": 75.0,
+      "label": "#42",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#43",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#44",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 19,
+      "accuracy": 67.9,
+      "label": "#45",
+      "flagged": 10
+    },
+    {
+      "total": 28,
+      "correct": 18,
+      "accuracy": 64.3,
+      "label": "#46",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#47",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 21,
+      "accuracy": 75.0,
+      "label": "#48",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#49",
+      "flagged": 8
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#50",
+      "flagged": 0
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#51",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#52",
+      "flagged": 0
+    },
+    {
+      "total": 28,
+      "correct": 28,
+      "accuracy": 100.0,
+      "label": "#53",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#54",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#55",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#56",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#57",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#58",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#59",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#60",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#61",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#62",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#63",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#64",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#65",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#66",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 22,
+      "accuracy": 78.6,
+      "label": "#67",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 20,
+      "accuracy": 71.4,
+      "label": "#68",
+      "flagged": 8
+    },
+    {
+      "total": 28,
+      "correct": 22,
+      "accuracy": 78.6,
+      "label": "#69",
+      "flagged": 7
+    },
+    {
+      "total": 28,
+      "correct": 21,
+      "accuracy": 75.0,
+      "label": "#70",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 21,
+      "accuracy": 75.0,
+      "label": "#71",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 20,
+      "accuracy": 71.4,
+      "label": "#72",
+      "flagged": 8
+    },
+    {
+      "total": 28,
+      "correct": 19,
+      "accuracy": 67.9,
+      "label": "#73",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 21,
+      "accuracy": 75.0,
+      "label": "#74",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#75",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#76",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#77",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#78",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 25,
+      "accuracy": 89.3,
+      "label": "#79",
+      "flagged": 1
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#80",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#81",
+      "flagged": 2
+    },
+    {
+      "total": 28,
+      "correct": 26,
+      "accuracy": 92.9,
+      "label": "#82",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#83",
+      "flagged": 3
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#84",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#85",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#86",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 27,
+      "accuracy": 96.4,
+      "label": "#87",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#88",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 21,
+      "accuracy": 75.0,
+      "label": "#89",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#90",
+      "flagged": 5
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#91",
+      "flagged": 4
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#92",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 20,
+      "accuracy": 71.4,
+      "label": "#93",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 23,
+      "accuracy": 82.1,
+      "label": "#94",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#95",
+      "flagged": 7
+    },
+    {
+      "total": 28,
+      "correct": 19,
+      "accuracy": 67.9,
+      "label": "#96",
+      "flagged": 6
+    },
+    {
+      "total": 28,
+      "correct": 24,
+      "accuracy": 85.7,
+      "label": "#97",
+      "flagged": 4
+    },
+    {
+      "total": 25,
+      "correct": 22,
+      "accuracy": 88.0,
+      "label": "#98",
+      "flagged": 4
+    },
+    {
+      "total": 20,
+      "correct": 18,
+      "accuracy": 90.0,
+      "label": "#99",
+      "flagged": 2
+    },
+    {
+      "total": 15,
+      "correct": 15,
+      "accuracy": 100.0,
+      "label": "#100",
+      "flagged": 2
+    },
+    {
+      "total": 4,
+      "correct": 1,
+      "accuracy": 25.0,
+      "label": "#101",
+      "flagged": 0
+    }
+  ],
+  "answerDistribution": [
+    {
+      "letter": "A",
+      "correctKey": 541,
+      "selected": 575
+    },
+    {
+      "letter": "B",
+      "correctKey": 591,
+      "selected": 595
+    },
+    {
+      "letter": "C",
+      "correctKey": 549,
+      "selected": 564
+    },
+    {
+      "letter": "D",
+      "correctKey": 583,
+      "selected": 552
+    },
+    {
+      "letter": "E",
+      "correctKey": 516,
+      "selected": 494
+    }
+  ],
+  "byCorrectLetter": [
+    {
+      "total": 541,
+      "correct": 470,
+      "accuracy": 86.9,
+      "label": "A"
+    },
+    {
+      "total": 591,
+      "correct": 515,
+      "accuracy": 87.1,
+      "label": "B"
+    },
+    {
+      "total": 549,
+      "correct": 473,
+      "accuracy": 86.2,
+      "label": "C"
+    },
+    {
+      "total": 583,
+      "correct": 481,
+      "accuracy": 82.5,
+      "label": "D"
+    },
+    {
+      "total": 516,
+      "correct": 419,
+      "accuracy": 81.2,
+      "label": "E"
+    }
+  ],
+  "rcConcentration": {
+    "totalPassages": 190,
+    "passagesWithError": 79,
+    "lonePassages": 50,
+    "multiPassages": 29,
+    "totalErrors": 114,
+    "errorsLone": 50,
+    "errorsClustered": 64,
+    "pctErrorsClustered": 56.1,
+    "distribution": [
+      {
+        "errors": 0,
+        "passages": 111
+      },
+      {
+        "errors": 1,
+        "passages": 50
+      },
+      {
+        "errors": 2,
+        "passages": 24
+      },
+      {
+        "errors": 3,
+        "passages": 4
+      },
+      {
+        "errors": 4,
+        "passages": 1
+      }
+    ]
+  },
+  "flagBreakdown": {
+    "flagged": {
+      "total": 400,
+      "correct": 276,
+      "accuracy": 69.0
+    },
+    "unflagged": {
+      "total": 2380,
+      "correct": 2082,
+      "accuracy": 87.5
+    }
+  },
+  "categoryMeta": {
+    "classified": 2780,
+    "total": 2780
+  },
+  "byLrCategory": [
+    {
+      "total": 299,
+      "correct": 246,
+      "accuracy": 82.3,
+      "label": "flaw",
+      "flagged": 47,
+      "points_lost": 53,
+      "wrong_unflagged": 30,
+      "wrong_unflagged_rate": 10.0
+    },
+    {
+      "total": 222,
+      "correct": 163,
+      "accuracy": 73.4,
+      "label": "necessary_assumption",
+      "flagged": 36,
+      "points_lost": 59,
+      "wrong_unflagged": 39,
+      "wrong_unflagged_rate": 17.6
+    },
+    {
+      "total": 190,
+      "correct": 157,
+      "accuracy": 82.6,
+      "label": "weaken",
+      "flagged": 26,
+      "points_lost": 33,
+      "wrong_unflagged": 24,
+      "wrong_unflagged_rate": 12.6
+    },
+    {
+      "total": 131,
+      "correct": 105,
+      "accuracy": 80.2,
+      "label": "most_strongly_supported",
+      "flagged": 31,
+      "points_lost": 26,
+      "wrong_unflagged": 14,
+      "wrong_unflagged_rate": 10.7
+    },
+    {
+      "total": 115,
+      "correct": 107,
+      "accuracy": 93.0,
+      "label": "resolve_paradox",
+      "flagged": 15,
+      "points_lost": 8,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 4.3
+    },
+    {
+      "total": 113,
+      "correct": 100,
+      "accuracy": 88.5,
+      "label": "strengthen",
+      "flagged": 12,
+      "points_lost": 13,
+      "wrong_unflagged": 8,
+      "wrong_unflagged_rate": 7.1
+    },
+    {
+      "total": 98,
+      "correct": 80,
+      "accuracy": 81.6,
+      "label": "must_be_true",
+      "flagged": 34,
+      "points_lost": 18,
+      "wrong_unflagged": 6,
+      "wrong_unflagged_rate": 6.1
+    },
+    {
+      "total": 89,
+      "correct": 74,
+      "accuracy": 83.1,
+      "label": "main_point",
+      "flagged": 13,
+      "points_lost": 15,
+      "wrong_unflagged": 11,
+      "wrong_unflagged_rate": 12.4
+    },
+    {
+      "total": 88,
+      "correct": 77,
+      "accuracy": 87.5,
+      "label": "principle_apply",
+      "flagged": 8,
+      "points_lost": 11,
+      "wrong_unflagged": 9,
+      "wrong_unflagged_rate": 10.2
+    },
+    {
+      "total": 74,
+      "correct": 63,
+      "accuracy": 85.1,
+      "label": "parallel_flaw",
+      "flagged": 14,
+      "points_lost": 11,
+      "wrong_unflagged": 8,
+      "wrong_unflagged_rate": 10.8
+    },
+    {
+      "total": 74,
+      "correct": 64,
+      "accuracy": 86.5,
+      "label": "principle_strengthen",
+      "flagged": 8,
+      "points_lost": 10,
+      "wrong_unflagged": 7,
+      "wrong_unflagged_rate": 9.5
+    },
+    {
+      "total": 74,
+      "correct": 67,
+      "accuracy": 90.5,
+      "label": "sufficient_assumption",
+      "flagged": 12,
+      "points_lost": 7,
+      "wrong_unflagged": 4,
+      "wrong_unflagged_rate": 5.4
+    },
+    {
+      "total": 73,
+      "correct": 64,
+      "accuracy": 87.7,
+      "label": "role_in_argument",
+      "flagged": 16,
+      "points_lost": 9,
+      "wrong_unflagged": 6,
+      "wrong_unflagged_rate": 8.2
+    },
+    {
+      "total": 67,
+      "correct": 56,
+      "accuracy": 83.6,
+      "label": "point_at_issue",
+      "flagged": 5,
+      "points_lost": 11,
+      "wrong_unflagged": 10,
+      "wrong_unflagged_rate": 14.9
+    },
+    {
+      "total": 66,
+      "correct": 55,
+      "accuracy": 83.3,
+      "label": "parallel_reasoning",
+      "flagged": 12,
+      "points_lost": 11,
+      "wrong_unflagged": 9,
+      "wrong_unflagged_rate": 13.6
+    },
+    {
+      "total": 43,
+      "correct": 37,
+      "accuracy": 86.0,
+      "label": "method_of_reasoning",
+      "flagged": 3,
+      "points_lost": 6,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 11.6
+    },
+    {
+      "total": 21,
+      "correct": 16,
+      "accuracy": 76.2,
+      "label": "cannot_be_true",
+      "flagged": 3,
+      "points_lost": 5,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 14.3
+    },
+    {
+      "total": 16,
+      "correct": 14,
+      "accuracy": 87.5,
+      "label": "evaluate",
+      "flagged": 0,
+      "points_lost": 2,
+      "wrong_unflagged": 2,
+      "wrong_unflagged_rate": 12.5
+    }
+  ],
+  "byRcCategory": [
+    {
+      "total": 246,
+      "correct": 210,
+      "accuracy": 85.4,
+      "label": "inference",
+      "flagged": 34,
+      "points_lost": 36,
+      "wrong_unflagged": 32,
+      "wrong_unflagged_rate": 13.0
+    },
+    {
+      "total": 179,
+      "correct": 162,
+      "accuracy": 90.5,
+      "label": "detail",
+      "flagged": 19,
+      "points_lost": 17,
+      "wrong_unflagged": 12,
+      "wrong_unflagged_rate": 6.7
+    },
+    {
+      "total": 130,
+      "correct": 114,
+      "accuracy": 87.7,
+      "label": "main_point",
+      "flagged": 12,
+      "points_lost": 16,
+      "wrong_unflagged": 15,
+      "wrong_unflagged_rate": 11.5
+    },
+    {
+      "total": 116,
+      "correct": 98,
+      "accuracy": 84.5,
+      "label": "function",
+      "flagged": 12,
+      "points_lost": 18,
+      "wrong_unflagged": 15,
+      "wrong_unflagged_rate": 12.9
+    },
+    {
+      "total": 69,
+      "correct": 61,
+      "accuracy": 88.4,
+      "label": "analogy_application",
+      "flagged": 8,
+      "points_lost": 8,
+      "wrong_unflagged": 7,
+      "wrong_unflagged_rate": 10.1
+    },
+    {
+      "total": 66,
+      "correct": 60,
+      "accuracy": 90.9,
+      "label": "author_attitude",
+      "flagged": 9,
+      "points_lost": 6,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 7.6
+    },
+    {
+      "total": 52,
+      "correct": 48,
+      "accuracy": 92.3,
+      "label": "primary_purpose",
+      "flagged": 9,
+      "points_lost": 4,
+      "wrong_unflagged": 4,
+      "wrong_unflagged_rate": 7.7
+    },
+    {
+      "total": 42,
+      "correct": 38,
+      "accuracy": 90.5,
+      "label": "meaning_in_context",
+      "flagged": 2,
+      "points_lost": 4,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 7.1
+    },
+    {
+      "total": 16,
+      "correct": 14,
+      "accuracy": 87.5,
+      "label": "weaken",
+      "flagged": 0,
+      "points_lost": 2,
+      "wrong_unflagged": 2,
+      "wrong_unflagged_rate": 12.5
+    },
+    {
+      "total": 11,
+      "correct": 8,
+      "accuracy": 72.7,
+      "label": "strengthen",
+      "flagged": 0,
+      "points_lost": 3,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 27.3
+    }
+  ],
+  "byLrCategoryByPointsLost": [
+    {
+      "total": 222,
+      "correct": 163,
+      "accuracy": 73.4,
+      "label": "necessary_assumption",
+      "flagged": 36,
+      "points_lost": 59,
+      "wrong_unflagged": 39,
+      "wrong_unflagged_rate": 17.6
+    },
+    {
+      "total": 299,
+      "correct": 246,
+      "accuracy": 82.3,
+      "label": "flaw",
+      "flagged": 47,
+      "points_lost": 53,
+      "wrong_unflagged": 30,
+      "wrong_unflagged_rate": 10.0
+    },
+    {
+      "total": 190,
+      "correct": 157,
+      "accuracy": 82.6,
+      "label": "weaken",
+      "flagged": 26,
+      "points_lost": 33,
+      "wrong_unflagged": 24,
+      "wrong_unflagged_rate": 12.6
+    },
+    {
+      "total": 131,
+      "correct": 105,
+      "accuracy": 80.2,
+      "label": "most_strongly_supported",
+      "flagged": 31,
+      "points_lost": 26,
+      "wrong_unflagged": 14,
+      "wrong_unflagged_rate": 10.7
+    },
+    {
+      "total": 98,
+      "correct": 80,
+      "accuracy": 81.6,
+      "label": "must_be_true",
+      "flagged": 34,
+      "points_lost": 18,
+      "wrong_unflagged": 6,
+      "wrong_unflagged_rate": 6.1
+    },
+    {
+      "total": 89,
+      "correct": 74,
+      "accuracy": 83.1,
+      "label": "main_point",
+      "flagged": 13,
+      "points_lost": 15,
+      "wrong_unflagged": 11,
+      "wrong_unflagged_rate": 12.4
+    },
+    {
+      "total": 113,
+      "correct": 100,
+      "accuracy": 88.5,
+      "label": "strengthen",
+      "flagged": 12,
+      "points_lost": 13,
+      "wrong_unflagged": 8,
+      "wrong_unflagged_rate": 7.1
+    },
+    {
+      "total": 88,
+      "correct": 77,
+      "accuracy": 87.5,
+      "label": "principle_apply",
+      "flagged": 8,
+      "points_lost": 11,
+      "wrong_unflagged": 9,
+      "wrong_unflagged_rate": 10.2
+    },
+    {
+      "total": 74,
+      "correct": 63,
+      "accuracy": 85.1,
+      "label": "parallel_flaw",
+      "flagged": 14,
+      "points_lost": 11,
+      "wrong_unflagged": 8,
+      "wrong_unflagged_rate": 10.8
+    },
+    {
+      "total": 67,
+      "correct": 56,
+      "accuracy": 83.6,
+      "label": "point_at_issue",
+      "flagged": 5,
+      "points_lost": 11,
+      "wrong_unflagged": 10,
+      "wrong_unflagged_rate": 14.9
+    },
+    {
+      "total": 66,
+      "correct": 55,
+      "accuracy": 83.3,
+      "label": "parallel_reasoning",
+      "flagged": 12,
+      "points_lost": 11,
+      "wrong_unflagged": 9,
+      "wrong_unflagged_rate": 13.6
+    },
+    {
+      "total": 74,
+      "correct": 64,
+      "accuracy": 86.5,
+      "label": "principle_strengthen",
+      "flagged": 8,
+      "points_lost": 10,
+      "wrong_unflagged": 7,
+      "wrong_unflagged_rate": 9.5
+    },
+    {
+      "total": 73,
+      "correct": 64,
+      "accuracy": 87.7,
+      "label": "role_in_argument",
+      "flagged": 16,
+      "points_lost": 9,
+      "wrong_unflagged": 6,
+      "wrong_unflagged_rate": 8.2
+    },
+    {
+      "total": 115,
+      "correct": 107,
+      "accuracy": 93.0,
+      "label": "resolve_paradox",
+      "flagged": 15,
+      "points_lost": 8,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 4.3
+    },
+    {
+      "total": 74,
+      "correct": 67,
+      "accuracy": 90.5,
+      "label": "sufficient_assumption",
+      "flagged": 12,
+      "points_lost": 7,
+      "wrong_unflagged": 4,
+      "wrong_unflagged_rate": 5.4
+    },
+    {
+      "total": 43,
+      "correct": 37,
+      "accuracy": 86.0,
+      "label": "method_of_reasoning",
+      "flagged": 3,
+      "points_lost": 6,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 11.6
+    },
+    {
+      "total": 21,
+      "correct": 16,
+      "accuracy": 76.2,
+      "label": "cannot_be_true",
+      "flagged": 3,
+      "points_lost": 5,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 14.3
+    },
+    {
+      "total": 16,
+      "correct": 14,
+      "accuracy": 87.5,
+      "label": "evaluate",
+      "flagged": 0,
+      "points_lost": 2,
+      "wrong_unflagged": 2,
+      "wrong_unflagged_rate": 12.5
+    }
+  ],
+  "byRcCategoryByPointsLost": [
+    {
+      "total": 246,
+      "correct": 210,
+      "accuracy": 85.4,
+      "label": "inference",
+      "flagged": 34,
+      "points_lost": 36,
+      "wrong_unflagged": 32,
+      "wrong_unflagged_rate": 13.0
+    },
+    {
+      "total": 116,
+      "correct": 98,
+      "accuracy": 84.5,
+      "label": "function",
+      "flagged": 12,
+      "points_lost": 18,
+      "wrong_unflagged": 15,
+      "wrong_unflagged_rate": 12.9
+    },
+    {
+      "total": 179,
+      "correct": 162,
+      "accuracy": 90.5,
+      "label": "detail",
+      "flagged": 19,
+      "points_lost": 17,
+      "wrong_unflagged": 12,
+      "wrong_unflagged_rate": 6.7
+    },
+    {
+      "total": 130,
+      "correct": 114,
+      "accuracy": 87.7,
+      "label": "main_point",
+      "flagged": 12,
+      "points_lost": 16,
+      "wrong_unflagged": 15,
+      "wrong_unflagged_rate": 11.5
+    },
+    {
+      "total": 69,
+      "correct": 61,
+      "accuracy": 88.4,
+      "label": "analogy_application",
+      "flagged": 8,
+      "points_lost": 8,
+      "wrong_unflagged": 7,
+      "wrong_unflagged_rate": 10.1
+    },
+    {
+      "total": 66,
+      "correct": 60,
+      "accuracy": 90.9,
+      "label": "author_attitude",
+      "flagged": 9,
+      "points_lost": 6,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 7.6
+    },
+    {
+      "total": 52,
+      "correct": 48,
+      "accuracy": 92.3,
+      "label": "primary_purpose",
+      "flagged": 9,
+      "points_lost": 4,
+      "wrong_unflagged": 4,
+      "wrong_unflagged_rate": 7.7
+    },
+    {
+      "total": 42,
+      "correct": 38,
+      "accuracy": 90.5,
+      "label": "meaning_in_context",
+      "flagged": 2,
+      "points_lost": 4,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 7.1
+    },
+    {
+      "total": 11,
+      "correct": 8,
+      "accuracy": 72.7,
+      "label": "strengthen",
+      "flagged": 0,
+      "points_lost": 3,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 27.3
+    },
+    {
+      "total": 16,
+      "correct": 14,
+      "accuracy": 87.5,
+      "label": "weaken",
+      "flagged": 0,
+      "points_lost": 2,
+      "wrong_unflagged": 2,
+      "wrong_unflagged_rate": 12.5
+    }
+  ],
+  "byLrCategoryWrongUnflagged": [
+    {
+      "total": 222,
+      "correct": 163,
+      "accuracy": 73.4,
+      "label": "necessary_assumption",
+      "flagged": 36,
+      "points_lost": 59,
+      "wrong_unflagged": 39,
+      "wrong_unflagged_rate": 17.6
+    },
+    {
+      "total": 299,
+      "correct": 246,
+      "accuracy": 82.3,
+      "label": "flaw",
+      "flagged": 47,
+      "points_lost": 53,
+      "wrong_unflagged": 30,
+      "wrong_unflagged_rate": 10.0
+    },
+    {
+      "total": 190,
+      "correct": 157,
+      "accuracy": 82.6,
+      "label": "weaken",
+      "flagged": 26,
+      "points_lost": 33,
+      "wrong_unflagged": 24,
+      "wrong_unflagged_rate": 12.6
+    },
+    {
+      "total": 131,
+      "correct": 105,
+      "accuracy": 80.2,
+      "label": "most_strongly_supported",
+      "flagged": 31,
+      "points_lost": 26,
+      "wrong_unflagged": 14,
+      "wrong_unflagged_rate": 10.7
+    },
+    {
+      "total": 89,
+      "correct": 74,
+      "accuracy": 83.1,
+      "label": "main_point",
+      "flagged": 13,
+      "points_lost": 15,
+      "wrong_unflagged": 11,
+      "wrong_unflagged_rate": 12.4
+    },
+    {
+      "total": 67,
+      "correct": 56,
+      "accuracy": 83.6,
+      "label": "point_at_issue",
+      "flagged": 5,
+      "points_lost": 11,
+      "wrong_unflagged": 10,
+      "wrong_unflagged_rate": 14.9
+    },
+    {
+      "total": 88,
+      "correct": 77,
+      "accuracy": 87.5,
+      "label": "principle_apply",
+      "flagged": 8,
+      "points_lost": 11,
+      "wrong_unflagged": 9,
+      "wrong_unflagged_rate": 10.2
+    },
+    {
+      "total": 66,
+      "correct": 55,
+      "accuracy": 83.3,
+      "label": "parallel_reasoning",
+      "flagged": 12,
+      "points_lost": 11,
+      "wrong_unflagged": 9,
+      "wrong_unflagged_rate": 13.6
+    },
+    {
+      "total": 113,
+      "correct": 100,
+      "accuracy": 88.5,
+      "label": "strengthen",
+      "flagged": 12,
+      "points_lost": 13,
+      "wrong_unflagged": 8,
+      "wrong_unflagged_rate": 7.1
+    },
+    {
+      "total": 74,
+      "correct": 63,
+      "accuracy": 85.1,
+      "label": "parallel_flaw",
+      "flagged": 14,
+      "points_lost": 11,
+      "wrong_unflagged": 8,
+      "wrong_unflagged_rate": 10.8
+    },
+    {
+      "total": 74,
+      "correct": 64,
+      "accuracy": 86.5,
+      "label": "principle_strengthen",
+      "flagged": 8,
+      "points_lost": 10,
+      "wrong_unflagged": 7,
+      "wrong_unflagged_rate": 9.5
+    },
+    {
+      "total": 98,
+      "correct": 80,
+      "accuracy": 81.6,
+      "label": "must_be_true",
+      "flagged": 34,
+      "points_lost": 18,
+      "wrong_unflagged": 6,
+      "wrong_unflagged_rate": 6.1
+    },
+    {
+      "total": 73,
+      "correct": 64,
+      "accuracy": 87.7,
+      "label": "role_in_argument",
+      "flagged": 16,
+      "points_lost": 9,
+      "wrong_unflagged": 6,
+      "wrong_unflagged_rate": 8.2
+    },
+    {
+      "total": 115,
+      "correct": 107,
+      "accuracy": 93.0,
+      "label": "resolve_paradox",
+      "flagged": 15,
+      "points_lost": 8,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 4.3
+    },
+    {
+      "total": 43,
+      "correct": 37,
+      "accuracy": 86.0,
+      "label": "method_of_reasoning",
+      "flagged": 3,
+      "points_lost": 6,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 11.6
+    },
+    {
+      "total": 74,
+      "correct": 67,
+      "accuracy": 90.5,
+      "label": "sufficient_assumption",
+      "flagged": 12,
+      "points_lost": 7,
+      "wrong_unflagged": 4,
+      "wrong_unflagged_rate": 5.4
+    },
+    {
+      "total": 21,
+      "correct": 16,
+      "accuracy": 76.2,
+      "label": "cannot_be_true",
+      "flagged": 3,
+      "points_lost": 5,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 14.3
+    },
+    {
+      "total": 16,
+      "correct": 14,
+      "accuracy": 87.5,
+      "label": "evaluate",
+      "flagged": 0,
+      "points_lost": 2,
+      "wrong_unflagged": 2,
+      "wrong_unflagged_rate": 12.5
+    }
+  ],
+  "byRcCategoryWrongUnflagged": [
+    {
+      "total": 246,
+      "correct": 210,
+      "accuracy": 85.4,
+      "label": "inference",
+      "flagged": 34,
+      "points_lost": 36,
+      "wrong_unflagged": 32,
+      "wrong_unflagged_rate": 13.0
+    },
+    {
+      "total": 130,
+      "correct": 114,
+      "accuracy": 87.7,
+      "label": "main_point",
+      "flagged": 12,
+      "points_lost": 16,
+      "wrong_unflagged": 15,
+      "wrong_unflagged_rate": 11.5
+    },
+    {
+      "total": 116,
+      "correct": 98,
+      "accuracy": 84.5,
+      "label": "function",
+      "flagged": 12,
+      "points_lost": 18,
+      "wrong_unflagged": 15,
+      "wrong_unflagged_rate": 12.9
+    },
+    {
+      "total": 179,
+      "correct": 162,
+      "accuracy": 90.5,
+      "label": "detail",
+      "flagged": 19,
+      "points_lost": 17,
+      "wrong_unflagged": 12,
+      "wrong_unflagged_rate": 6.7
+    },
+    {
+      "total": 69,
+      "correct": 61,
+      "accuracy": 88.4,
+      "label": "analogy_application",
+      "flagged": 8,
+      "points_lost": 8,
+      "wrong_unflagged": 7,
+      "wrong_unflagged_rate": 10.1
+    },
+    {
+      "total": 66,
+      "correct": 60,
+      "accuracy": 90.9,
+      "label": "author_attitude",
+      "flagged": 9,
+      "points_lost": 6,
+      "wrong_unflagged": 5,
+      "wrong_unflagged_rate": 7.6
+    },
+    {
+      "total": 52,
+      "correct": 48,
+      "accuracy": 92.3,
+      "label": "primary_purpose",
+      "flagged": 9,
+      "points_lost": 4,
+      "wrong_unflagged": 4,
+      "wrong_unflagged_rate": 7.7
+    },
+    {
+      "total": 42,
+      "correct": 38,
+      "accuracy": 90.5,
+      "label": "meaning_in_context",
+      "flagged": 2,
+      "points_lost": 4,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 7.1
+    },
+    {
+      "total": 11,
+      "correct": 8,
+      "accuracy": 72.7,
+      "label": "strengthen",
+      "flagged": 0,
+      "points_lost": 3,
+      "wrong_unflagged": 3,
+      "wrong_unflagged_rate": 27.3
+    },
+    {
+      "total": 16,
+      "correct": 14,
+      "accuracy": 87.5,
+      "label": "weaken",
+      "flagged": 0,
+      "points_lost": 2,
+      "wrong_unflagged": 2,
+      "wrong_unflagged_rate": 12.5
+    }
+  ]
+}

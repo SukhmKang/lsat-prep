@@ -1,0 +1,27 @@
+{
+  "name": "lsat-stats",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "stats": "../venv/bin/python build_stats.py",
+    "classify": "../venv/bin/python classify_questions.py",
+    "stats:classify": "../venv/bin/python build_stats.py --classify",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "html2canvas-pro": "^2.0.4",
+    "jspdf": "^4.2.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.13.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.4",
+    "@vitejs/plugin-react": "^4.3.1",
+    "tailwindcss": "^4.1.4",
+    "vite": "^5.4.10"
+  }
+}
