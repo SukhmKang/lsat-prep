@@ -260,6 +260,29 @@ export default function QuestionScreen({
               </span>
             </div>
 
+            {/* Original attempt info */}
+            {(question.selected_answer || question.flagged) && (
+              <div
+                className="px-4 py-2.5 font-ui text-xs"
+                style={{
+                  backgroundColor: '#f7f4f0',
+                  border: '1px solid #e0dbd4',
+                  borderTop: 'none',
+                  borderBottom: question.explanation ? 'none' : '1px solid #e0dbd4',
+                  borderRadius: question.explanation ? 0 : '0 0 0.75rem 0.75rem',
+                  color: '#a09888',
+                }}
+              >
+                {question.selected_answer && (
+                  <span>
+                    Originally answered <strong style={{ color: '#706860' }}>{question.selected_answer}</strong>
+                  </span>
+                )}
+                {question.selected_answer && question.flagged && <span> · </span>}
+                {question.flagged && <span>Flagged for review</span>}
+              </div>
+            )}
+
             {/* Explanation body */}
             {question.explanation && (
               <details open>
