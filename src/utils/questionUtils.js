@@ -93,8 +93,6 @@ export function groupByPassage(pool) {
   return groups
 }
 
-export const wrongQuestions = questions.filter(q => q.correct === false)
-
 export const allSources = [...new Set(questions.map(q => q.source).filter(Boolean))].sort()
 
 export function formatSourceLabel(source) {

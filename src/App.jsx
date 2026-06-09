@@ -87,10 +87,10 @@ function buildTimedSessionQuestions(numQuestions, pool = questions) {
 }
 
 export default function App() {
-  const [screen, setScreen] = useState('home')  // 'home' | 'endless' | 'timed' | 'mistakes' | 'results'
+  const [screen, setScreen] = useState('home')  // 'home' | 'endless' | 'timed' | 'review' | 'results'
   const [timedSession, setTimedSession] = useState(null)
   const [timedConfig, setTimedConfig] = useState(null)
-  const [mistakesPool, setMistakesPool] = useState(null)
+  const [reviewPool, setReviewPool] = useState(null)
 
   const progress = useProgress()
 
@@ -132,7 +132,7 @@ export default function App() {
   const startTimed = useCallback(({ numQuestions, timeLimitSeconds, pool }) => {
     const sessionQuestions = buildTimedSessionQuestions(numQuestions, pool)
 
-    setMistakesPool(null)
+    setReviewPool(null)
     setTimedConfig({ numQuestions, timeLimitSeconds, pool })
     setTimedSession({
       questions: sessionQuestions,
@@ -152,9 +152,9 @@ export default function App() {
     if (timedConfig) startTimed(timedConfig)
   }, [timedConfig, startTimed])
 
-  // ── Mistakes mode ───────────────────────────────────────────────
-  const startMistakes = useCallback((pool) => {
-    setMistakesPool(pool)
+  // ── Review mode ───────────────────────────────────────────────
+  const startReview = useCallback((pool) => {
+    setReviewPool(pool)
     setTimedConfig(null)
     setTimedSession({
       questions: shuffle(pool),
@@ -162,12 +162,12 @@ export default function App() {
       answers: {},
       elapsedSeconds: 0,
     })
-    setScreen('mistakes')
+    setScreen('review')
   }, [])
 
-  const retryMistakes = useCallback(() => {
-    if (mistakesPool) startMistakes(mistakesPool)
-  }, [mistakesPool, startMistakes])
+  const retryReview = useCallback(() => {
+    if (reviewPool) startReview(reviewPool)
+  }, [reviewPool, startReview])
 
   const goHome = useCallback(() => {
     setScreen('home')
@@ -182,7 +182,7 @@ export default function App() {
           <HomeScreen
             onStartEndless={startEndless}
             onStartTimed={startTimed}
-            onStartMistakes={startMistakes}
+            onStartReview={startReview}
             endlessState={{
               currentIndex: progress.currentIndex,
               totalQuestions: progress.totalQuestions,
@@ -229,8 +229,8 @@ export default function App() {
         </div>
       )}
 
-      {screen === 'mistakes' && timedSession && (
-        <div key="mistakes-screen" className="animate-fade-slide" style={{ position: 'relative' }}>
+      {screen === 'review' && timedSession && (
+        <div key="review-screen" className="animate-fade-slide" style={{ position: 'relative' }}>
           <TimedSession
             session={timedSession}
             onEnd={endTimed}
@@ -244,7 +244,7 @@ export default function App() {
         <div key="results-screen" className="animate-fade-slide">
           <ResultsScreen
             session={timedSession}
-            onRetry={mistakesPool ? retryMistakes : retryTimed}
+            onRetry={reviewPool ? retryReview : retryTimed}
             onHome={goHome}
           />
         </div>

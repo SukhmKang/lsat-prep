@@ -1,10 +1,10 @@
 import React, { useState, useMemo } from 'react'
-import { questions, wrongQuestions, allSources, formatSourceLabel } from '../utils/questionUtils'
+import { questions, allSources, formatSourceLabel } from '../utils/questionUtils'
 
 export default function HomeScreen({
   onStartEndless,
   onStartTimed,
-  onStartMistakes,
+  onStartReview,
   endlessState,        // { currentIndex, totalQuestions, totalAnswered }
   onResetProgress,
 }) {
@@ -52,10 +52,6 @@ export default function HomeScreen({
     () => questions.filter(q => selectedSources.has(q.source) && typeFilter(q) && correctnessFilter(q)),
     [selectedSources, questionType, answerFilter]
   )
-  const filteredWrongPool = useMemo(
-    () => wrongQuestions.filter(q => selectedSources.has(q.source) && typeFilter(q)),
-    [selectedSources, questionType]
-  )
 
   const cappedNum = Math.min(numQuestions, filteredPool.length)
   const autoTimeLimitMin = Math.round(cappedNum * 1.33)
@@ -87,15 +83,15 @@ export default function HomeScreen({
     onStartEndless()
   }
 
-  const handleStartMistakes = () => {
-    if (filteredWrongPool.length === 0) return
-    onStartMistakes(filteredWrongPool)
+  const handleStartReview = () => {
+    if (filteredPool.length === 0) return
+    onStartReview(filteredPool)
   }
 
   const { currentIndex, totalQuestions, totalAnswered } = endlessState
   const resumeLabel = `Resume at Q ${currentIndex + 1} / ${totalQuestions}`
 
-  const showFilter = mode === 'timed' || mode === 'mistakes'
+  const showFilter = mode === 'timed' || mode === 'review'
 
   return (
     <div className="animate-fade-slide min-h-dvh flex flex-col" style={{ backgroundColor: '#f7f4f0' }}>
@@ -105,7 +101,7 @@ export default function HomeScreen({
           className="flex rounded-xl p-1 gap-1"
           style={{ backgroundColor: '#eeebe6' }}
         >
-          {['endless', 'timed', 'mistakes'].map(m => (
+          {['endless', 'timed', 'review'].map(m => (
             <button
               key={m}
               onClick={() => setMode(m)}
@@ -115,13 +111,13 @@ export default function HomeScreen({
                 color: mode === m ? '#ffffff' : '#a09888',
               }}
             >
-              {m === 'endless' ? 'Endless' : m === 'timed' ? 'Timed' : 'Mistakes'}
+              {m === 'endless' ? 'Endless' : m === 'timed' ? 'Timed' : 'Review'}
             </button>
           ))}
         </div>
       </div>
 
-      {/* Test filter bubbles — shown for Timed and Mistakes */}
+      {/* Test filter bubbles — shown for Timed and Review */}
       {showFilter && (
         <div className="px-5 pt-4">
           <div className="flex items-center justify-between mb-2">
@@ -177,28 +173,26 @@ export default function HomeScreen({
             </div>
           </div>
 
-          {mode === 'timed' && (
-            <div className="mt-4">
-              <span className="font-ui text-xs font-semibold tracking-widest uppercase" style={{ color: '#a09888' }}>
-                Answer
-              </span>
-              <div className="flex rounded-xl p-1 gap-1 mt-2" style={{ backgroundColor: '#eeebe6' }}>
-                {[['all', 'Both'], ['correct', 'Correct'], ['incorrect', 'Incorrect']].map(([val, label]) => (
-                  <button
-                    key={val}
-                    onClick={() => setAnswerFilter(val)}
-                    className="flex-1 py-2 rounded-lg font-ui text-sm font-semibold transition-all duration-200"
-                    style={{
-                      backgroundColor: answerFilter === val ? '#1d4ed8' : 'transparent',
-                      color: answerFilter === val ? '#ffffff' : '#a09888',
-                    }}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
+          <div className="mt-4">
+            <span className="font-ui text-xs font-semibold tracking-widest uppercase" style={{ color: '#a09888' }}>
+              Answer
+            </span>
+            <div className="flex rounded-xl p-1 gap-1 mt-2" style={{ backgroundColor: '#eeebe6' }}>
+              {[['all', 'Both'], ['correct', 'Correct'], ['incorrect', 'Incorrect']].map(([val, label]) => (
+                <button
+                  key={val}
+                  onClick={() => setAnswerFilter(val)}
+                  className="flex-1 py-2 rounded-lg font-ui text-sm font-semibold transition-all duration-200"
+                  style={{
+                    backgroundColor: answerFilter === val ? '#1d4ed8' : 'transparent',
+                    color: answerFilter === val ? '#ffffff' : '#a09888',
+                  }}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
-          )}
+          </div>
         </div>
       )}
 
@@ -371,39 +365,39 @@ export default function HomeScreen({
             </button>
           </div>
         ) : (
-          <div key="mistakes" className="animate-fade-slide flex flex-col gap-5">
-            {/* Wrong question count */}
+          <div key="review" className="animate-fade-slide flex flex-col gap-5">
+            {/* Question count */}
             <div
               className="p-4 rounded-xl"
               style={{ backgroundColor: '#ffffff', border: '1px solid #d8d3cc' }}
             >
               <p className="font-ui text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: '#a09888' }}>
-                Wrong answers
+                Questions
               </p>
-              {filteredWrongPool.length > 0 ? (
+              {filteredPool.length > 0 ? (
                 <p className="font-ui text-sm font-medium" style={{ color: '#1a1714' }}>
-                  {filteredWrongPool.length} question{filteredWrongPool.length !== 1 ? 's' : ''} from {selectedSources.size} test{selectedSources.size !== 1 ? 's' : ''}
+                  {filteredPool.length} question{filteredPool.length !== 1 ? 's' : ''} from {selectedSources.size} test{selectedSources.size !== 1 ? 's' : ''}
                 </p>
               ) : (
                 <p className="font-ui text-sm" style={{ color: '#a09888' }}>
-                  No wrong answers in the selected tests.
+                  No questions match the selected filters.
                 </p>
               )}
             </div>
 
             {/* Start button */}
             <button
-              onClick={handleStartMistakes}
-              disabled={filteredWrongPool.length === 0}
+              onClick={handleStartReview}
+              disabled={filteredPool.length === 0}
               className="w-full py-4 rounded-2xl font-ui font-semibold text-base transition-all duration-150 active:scale-[0.98]"
               style={{
-                backgroundColor: filteredWrongPool.length > 0 ? '#1d4ed8' : '#eeebe6',
-                color: filteredWrongPool.length > 0 ? '#ffffff' : '#a09888',
-                cursor: filteredWrongPool.length > 0 ? 'pointer' : 'not-allowed',
-                border: filteredWrongPool.length === 0 ? '1px solid #d8d3cc' : 'none',
+                backgroundColor: filteredPool.length > 0 ? '#1d4ed8' : '#eeebe6',
+                color: filteredPool.length > 0 ? '#ffffff' : '#a09888',
+                cursor: filteredPool.length > 0 ? 'pointer' : 'not-allowed',
+                border: filteredPool.length === 0 ? '1px solid #d8d3cc' : 'none',
               }}
             >
-              Drill Mistakes →
+              Start Review →
             </button>
           </div>
         )}
